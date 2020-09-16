@@ -1,0 +1,17 @@
+version: "3"
+services:
+
+  aria2rpc:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: ztj1993/aria2rpc:latest
+    hostname: aria2rpc
+    container_name: aria2rpc
+    network_mode: custom
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+    expose:
+      - 6800/tcp
+    ports:
+      - 6800/tcp
